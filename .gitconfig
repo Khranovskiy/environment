@@ -1,6 +1,6 @@
 [user]
-	email = dkhranovskiy@itoolabs.com
-#	signingkey = 1D73448298F4C253
+	email = xronosd@gmail.com
+	signingkey = 3311B0F888F44C0F
 	name = Denis Khranovskiy
 [core]
 	excludesfile = /Users/khranovsky/.gitignore_global
