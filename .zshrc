@@ -88,11 +88,33 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-
+#============
+# 
 # Color listing
-#eval $(dircolors ~/.dir_colors)
+if whence dircolors >/dev/null; then
+  eval $(dircolors ~/.dir_colors)
+fi
 
-zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
+if whence gdircolors >/dev/null; then
+  eval $(gdircolors ~/.dir_colors)
+fi
+
+
+# Since youre using the default colors, you can pass an empty string 
+# to the list-colors to get colors in file completions.
+# https://unix.stackexchange.com/questions/91937/mac-os-x-dircolors-not-found
+
+#brew install coreutils
+
+if whence dircolors >/dev/null; then
+  eval "$(dircolors -b)"
+  alias ls='ls --color'
+  zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
+else
+  export CLICOLOR=1
+  zstyle ':completion:*:default' list-colors ''
+fi
+
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
