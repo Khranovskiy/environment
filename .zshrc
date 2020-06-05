@@ -54,7 +54,7 @@ ZSH_THEME="ys"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 
-plugins=(git osx macports go github golang gpg-agent npm node sbt scala xcode git-open)
+plugins=(git osx macports golang github golang gpg-agent npm node sbt scala xcode git-open)
 
 # User configuration
 
