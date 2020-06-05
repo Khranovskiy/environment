@@ -6,7 +6,9 @@ export ZSH=$HOME/.oh-my-zsh
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 
-ZSH_THEME="agnoster"
+#ZSH_THEME="agnoster"
+ZSH_THEME="zsh2000"
+#ZSH_THEME="finox"
 
 #autoload -U promptinit; promptinit
 #prompt spaceship
@@ -350,3 +352,24 @@ setopt HIST_REDUCE_BLANKS        # Remove superfluous blanks before recording en
 setopt HIST_VERIFY               # Don't execute immediately upon history expansion.
 setopt HIST_BEEP                 # Beep when accessing nonexistent history.
 ###-------------~~~~~~~~~~~-
+
+
+
+## Parameters for zsh2000 Zsh theme 
+
+#Disable the right hand side prompt entirely
+#export ZSH_2000_DISABLE_RIGHT_PROMPT='true'
+#Disable user@hostname
+export ZSH_2000_DEFAULT_USER='YOUR_USER_NAME'
+# Disable display of
+# exit status of your last command
+# whether or not you are root
+# whether or not there are background jobs running
+# by adding
+export ZSH_2000_DISABLE_STATUS='true'
+# Disable git status on top of plain git clean/dirty
+export ZSH_2000_DISABLE_GIT_STATUS='true'
+# Disable RVM prompt
+export ZSH_2000_DISABLE_RVM='true'
+
+
