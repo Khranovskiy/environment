@@ -93,3 +93,17 @@ zshimportbashhistory(){
 changeShellToZSH(){
 	sudo chsh -s $(which zsh) root
 }
+
+connect-docker-dev(){
+	LANGUAGE=en_US.UTF-8 LC_ALL=en_US.UTF-8 ssh -A docker-dev.itoolabs
+}
+
+#itoolabs specific
+connectToHistory(){
+ docker exec -it xronosd-history bash
+}
+#itoolabs specific - should i add domain check?
+connectToMongodb(){
+ docker exec -it xronosd-mongo bash
+}
+
