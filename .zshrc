@@ -92,11 +92,11 @@ source $ZSH/oh-my-zsh.sh
 # 
 # Color listing
 if whence dircolors >/dev/null; then
-  eval $(dircolors ~/.dir_colors)
+  eval $(dircolors -b ~/.dir_colors)
 fi
 
 if whence gdircolors >/dev/null; then
-  eval $(gdircolors ~/.dir_colors)
+  eval $(gdircolors -b ~/.dir_colors)
 fi
 
 
@@ -107,7 +107,7 @@ fi
 #brew install coreutils
 
 if whence dircolors >/dev/null; then
-  eval "$(dircolors -b)"
+  export LS_COLORS
   alias ls='ls --color'
   zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 else
