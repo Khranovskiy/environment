@@ -65,7 +65,7 @@ sed \"s/^+//\" | \
 git --no-pager grep -nFf - 2> /dev/null' -"
 
 [commit]
-	gpgsign = true
+#gpgsign = true
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
