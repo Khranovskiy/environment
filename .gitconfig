@@ -1,6 +1,6 @@
 [user]
-	email = xronosd@gmail.com
-	signingkey = 3311B0F888F44C0F
+	email = dkhranovskiy@itoolabs.com
+#	signingkey = 1D73448298F4C253
 	name = Denis Khranovskiy
 [core]
 	excludesfile = /Users/khranovsky/.gitignore_global
@@ -65,7 +65,7 @@ sed \"s/^+//\" | \
 git --no-pager grep -nFf - 2> /dev/null' -"
 
 [commit]
-#gpgsign = true
+#	gpgsign = true
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
