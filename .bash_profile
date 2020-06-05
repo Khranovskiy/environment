@@ -89,3 +89,7 @@ export GOPRIVATE="code.itoolabs.com/go"
 zshimportbashhistory(){
 	cat ~/.bash_history | cut -d' ' -f1- | sort | uniq | xargs -I % echo ": $(date +%s):0;" % >> ~/.zsh_history
 }
+
+changeShellToZSH(){
+	sudo chsh -s $(which zsh) root
+}
