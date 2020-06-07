@@ -144,9 +144,7 @@ if [ -f '/Users/khranovsky/.netlify/helper/path.zsh.inc' ]; then source '/Users/
 source ~/.bash_profile
 
 export PATH="$PATH:/Users/khranovsky/Applications/development/flutter/bin"
-HISTFILE=~/.histfile
-HISTSIZE=30000
-SAVEHIST=30000
+
 
 
 # https://git.itoolabs.com/sandboxes/sandbox/-/blob/master/.bashrc
@@ -376,4 +374,43 @@ export ZSH_2000_DISABLE_GIT_STATUS='true'
 # Disable RVM prompt
 export ZSH_2000_DISABLE_RVM='true'
 
+##--------------------------------------
+# from https://github.com/ai/environment/
 
+# Key bindings
+bindkey -e
+bindkey ';5D' backward-word # ctrl+left
+bindkey ';5C' forward-word  # ctrl+right
+
+
+# Node.js
+alias n='npx --no-install'
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && source "$NVM_DIR/nvm.sh"
+
+autoload -U add-zsh-hook
+load-nvmrc() {
+  local node_version="$(nvm version)"
+  local nvmrc_path="$(nvm_find_nvmrc)"
+
+  if [ -n "$nvmrc_path" ]; then
+    local nvmrc_node_version=$(nvm version "$(cat "${nvmrc_path}")")
+
+    if [ "$nvmrc_node_version" = "N/A" ]; then
+      nvm install
+    elif [ "$nvmrc_node_version" != "$node_version" ]; then
+      nvm use
+    fi
+  elif [ "$node_version" != "$(nvm version default)" ]; then
+    echo "Reverting to nvm default version"
+    nvm use default
+  fi
+}
+add-zsh-hook chpwd load-nvmrc
+load-nvmrc
+
+# Aliases
+alias ..='cd ..'
+alias l='exa --all'
+alias ll='exa --long --all --git'
+##---------------------------------------
