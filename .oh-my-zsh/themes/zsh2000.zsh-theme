@@ -74,7 +74,11 @@ prompt_git() {
 }
 
 prompt_dir() {
-  prompt_segment blue white '%~'
+# PROMPT='[%{$fg[$NCOLOR]%}%B%n%b%{$reset_color%}:%{$fg[red]%}%10<...<%~%<<%{$reset_color%}]%(!.#.$) '
+# https://github.com/ohmyzsh/ohmyzsh/blob/master/themes/mh.zsh-theme
+#
+# http://zsh.sourceforge.net/Doc/Release/Prompt-Expansion.html  %1d
+  prompt_segment blue white '%1d'
 }
 
 # Status:
