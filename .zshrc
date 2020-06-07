@@ -56,7 +56,10 @@ ZSH_THEME="zsh2000"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 
-plugins=(git osx macports golang github golang gpg-agent npm node sbt scala xcode git-open)
+# git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+# git clone https://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
+
+plugins=(git osx macports golang github golang gpg-agent npm node sbt scala xcode git-open zsh-syntax-highlighting zsh-autosuggestions)
 
 # User configuration
 
