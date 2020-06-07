@@ -338,7 +338,8 @@ set GIT_PS1_SHOWCOLORHINTS="yes"
 ###----~~~~~~~~~~~~``~``~~~~~~~~~`
 # from https://unix.stackexchange.com/questions/273861/unlimited-history-in-zsh
 
-HISTFILE="$HOME/.zsh_history"
+#HISTFILE="$HOME/.zsh_history"
+HISTFILE=~/.histfile
 HISTSIZE=10000000
 SAVEHIST=10000000
 setopt BANG_HIST                 # Treat the '!' character specially during expansion.
