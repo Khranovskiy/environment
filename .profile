@@ -14,7 +14,7 @@ export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
 export GOPATH=$HOME/Documents/code/go
 
 # for debian
-if [-f /usr/local/go/bin ] ; then export PATH=$PATH:/usr/local/go/bin ; fi
+if [ -f /usr/local/go/bin/go ] ; then export PATH=$PATH:/usr/local/go/bin ; fi
 
 export PATH="$HOME/.cargo/bin:$PATH"
 

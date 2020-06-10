@@ -388,7 +388,7 @@ alias n='npx --no-install'
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && source "$NVM_DIR/nvm.sh"
 
-#autoload -U add-zsh-hook
+autoload -U add-zsh-hook
 load-nvmrc() {
   local node_version="$(nvm version)"
   local nvmrc_path="$(nvm_find_nvmrc)"
@@ -406,8 +406,8 @@ load-nvmrc() {
     nvm use default
   fi
 }
-#add-zsh-hook chpwd load-nvmrc
-#load-nvmrc
+add-zsh-hook chpwd load-nvmrc
+load-nvmrc
 
 # Aliases
 alias ..='cd ..'
