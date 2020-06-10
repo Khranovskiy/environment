@@ -414,3 +414,6 @@ alias ..='cd ..'
 alias l='exa --all'
 alias ll='exa --long --all --git'
 ##---------------------------------------
+#
+
+source ~/.profile

@@ -1,5 +1,4 @@
 #set go env
-export JAVA_HOME=$(/usr/libexec/java_home)
 
 function node-project {
   git init
@@ -107,3 +106,5 @@ connectToMongodb(){
  docker exec -it xronosd-mongo bash
 }
 
+if [ -e /usr/libexec/java_home ] ; then JAVA_HOME=$(/usr/libexec/java_home); else JAVA_HOME=$(readlink -f /usr/bin/java | sed "s:bin/java::"); fi # set Java home to debian
+export JAVA_HOME
