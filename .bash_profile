@@ -26,6 +26,8 @@ alias i=npm_install
 
 function lolvim() { vim $1 | lolcat; }
 
+function hidefolderInMacOs() { setfile -a V $1 }
+
 function yu() {
     pushd
     cd ~/Downloads/youtube-unwatched 
