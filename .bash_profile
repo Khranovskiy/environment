@@ -13,6 +13,12 @@ function node-project {
   touch .metadata_never_index
   cd ..
 }
+function remove_node_modules(){
+    # find . -name 'node_modules' -type d -prune -exec rm -rf '{}' +
+    # https://stackoverflow.com/questions/42950501/delete-node-modules-folder-recursively-from-a-specified-path-using-command-line
+	
+	find . -name node_modules -type d -prune -exec trash {} +
+}
 
 function npm_install {
     if [ -f yarn.lock ]; then
@@ -85,6 +91,7 @@ export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="/nix/store/d0h5z9fppvapb89rrmkiyk5dddpp5v5g-texlive-combined-2018/bin:$PATH"
 #
 if [ -e /Users/khranovsky/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/khranovsky/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+
 export GOPRIVATE="code.itoolabs.com/go"
 
 zshimportbashhistory(){
@@ -94,7 +101,13 @@ zshimportbashhistory(){
 changeShellToZSH(){
 	sudo chsh -s $(which zsh) root
 }
-
+reinstallBrew(){
+	cd /tmp
+	brew list -1 >brew-list
+	while read package; do
+    	brew reinstall $package
+	done <brew-list
+}
 connect-docker-dev(){
 	LANGUAGE=en_US.UTF-8 LC_ALL=en_US.UTF-8 ssh -A docker-dev.itoolabs
 }
@@ -111,4 +124,4 @@ connectToMongodb(){
 if [ -e /usr/libexec/java_home ] ; then JAVA_HOME=$(/usr/libexec/java_home); else JAVA_HOME=$(readlink -f /usr/bin/java | sed "s:bin/java::"); fi # set Java home to debian
 export JAVA_HOME
 
-source /root/.rvm/scripts/rvm
+#source /root/.rvm/scripts/rvm

@@ -11,10 +11,14 @@ export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
 export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
 # Finished adapting your PATH environment variable for use with MacPorts.
 
-export GOPATH=$HOME/Documents/code/go
+export GOPATH=$HOME/go-path
+export GOROOT=$HOME/go/go1.13.15
+#export GOROOT=$HOME/go/go1.15
 
 # for debian
 if [ -f /usr/local/go/bin/go ] ; then export PATH=$PATH:/usr/local/go/bin ; fi
 
 export PATH="$HOME/.cargo/bin:$PATH"
+#export PATH="$HOME/go/go1.15/bin:$PATH"
+export PATH="$HOME/go/go1.13.15/bin:$PATH"
 

@@ -417,3 +417,6 @@ alias ll='exa --long --all --git'
 #
 
 source ~/.profile
+
+# read more
+# https://github.com/cirosantilli/dotfiles/blob/8537885b7ad122ae12892177674c31c88461e3ba/home/.bashrc#L2195

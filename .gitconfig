@@ -35,7 +35,8 @@
     lgb2 = log --graph --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(bold white)— %an%C(reset)' --abbrev-commit
     lgb = !"git lgb1"
     lg3 = log --graph  --date=local --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cd) %C(bold blue)<%an>%Creset' --abbrev-commit
-    bt = log --graph --simplify-by-decoration --pretty=format:'%d' --all
+    lg4 = log --graph --date=short --branches --pretty=format:'%C(yellow)%h%C(reset) %ad | %C(75)%s%C(reset) %C(yellow)%d%C(reset) [%an]'
+	bt = log --graph --simplify-by-decoration --pretty=format:'%d' --all
     lc = log ORIG_HEAD.. --stat --no-merges
     undo=reset --hard
     prune-all = !git remote | xargs -n 1 git remote prune
@@ -63,6 +64,7 @@ git --no-pager diff -U0 master | \
 grep \"^+.*TODO\" | \
 sed \"s/^+//\" | \
 git --no-pager grep -nFf - 2> /dev/null' -"
+	gofmt = !echo $(git diff --cached --name-only --diff-filter=ACM | grep .go) | xargs gofmt -w -l | xargs git add
 
 [commit]
 #	gpgsign = true
