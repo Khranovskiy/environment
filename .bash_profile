@@ -70,9 +70,6 @@ switchToHome(){
     git config --global user.signingkey 3311B0F888F44C0F
 }
 switchToWork(){
-    git config --global user.email "dkhranovskiy@itoolabs.com"    
-    git config --global user.name "Denis Khranovskiy"
-    git config --global user.signingkey 1D73448298F4C253
 }
 
 show_root_folder_size(){
@@ -108,18 +105,7 @@ reinstallBrew(){
     	brew reinstall $package
 	done <brew-list
 }
-connect-docker-dev(){
-	LANGUAGE=en_US.UTF-8 LC_ALL=en_US.UTF-8 ssh -A docker-dev.itoolabs
-}
 
-#itoolabs specific
-connectToHistory(){
- docker exec -it xronosd-history bash
-}
-#itoolabs specific - should i add domain check?
-connectToMongodb(){
- docker exec -it xronosd-mongo bash
-}
 
 if [ -e /usr/libexec/java_home ] ; then JAVA_HOME=$(/usr/libexec/java_home); else JAVA_HOME=$(readlink -f /usr/bin/java | sed "s:bin/java::"); fi # set Java home to debian
 export JAVA_HOME
