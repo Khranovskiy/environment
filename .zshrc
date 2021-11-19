@@ -147,8 +147,7 @@ export PATH="$PATH:/Users/khranovsky/Applications/development/flutter/bin"
 
 
 
-# https://git.itoolabs.com/sandboxes/sandbox/-/blob/master/.bashrc
-#
+
 ############################################################################
 #                                                                          #
 #               ------- Useful Docker Aliases --------                     #
